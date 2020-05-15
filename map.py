@@ -1,6 +1,8 @@
 import folium
 import pandas
 
+map = folium.Map(location = [38.58, -99.09], zoom_start = 4)
+
 data = pandas.read_csv("volcanoes.txt")
 lat = list(data["LAT"])
 long = list(data["LON"])
@@ -20,8 +22,6 @@ def colour_producer(elvation):
         return 'orange'
     else:
         return 'red'
-
-map = folium.Map(location = [38.58, -99.09], zoom_start = 5)
 
 volcanoes = folium.FeatureGroup(name = "Volcanoes")
 
